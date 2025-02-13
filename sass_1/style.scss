@@ -1,0 +1,31 @@
+// Mixin を定義
+@mixin float-style($floatValue) {
+  @if $floatValue {
+    float: left;
+  } @else {
+    float: right;
+  }
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  margin: 10px;
+  text-align: center;
+  line-height: 100px;
+  color: antiquewhite;
+}
+
+// クラスで Mixin を展開
+.is-float {
+  @include float-style(true);
+}
+
+.is-not-float {
+  @include float-style(false);
+}
