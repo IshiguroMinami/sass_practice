@@ -1,24 +1,32 @@
 // Mixin を定義
 @mixin float-style($floatValue) {
   @if $floatValue {
-    float: left;
+      float: left;
   } @else {
-    float: right;
+      float: right;
   }
 }
 
 .container {
   width: 50%;
   margin: 0 auto;
+
+  // 回り込みの解除
+  &::after {
+      content: "";
+      display: block;
+      clear: both;
+  }
 }
+
 .box {
   width: 100px;
   height: 100px;
-  background-color: orange;
+  background-color: #ffa500; // 16進数に変更
   margin: 10px;
   text-align: center;
   line-height: 100px;
-  color: antiquewhite;
+  color: #faebd7; // 16進数に変更
 }
 
 // クラスで Mixin を展開
