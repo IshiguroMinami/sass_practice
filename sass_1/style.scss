@@ -1,9 +1,9 @@
 // Mixin を定義
 @mixin float-style($floatValue) {
   @if $floatValue {
-      float: left;
+    float: left;
   } @else {
-      float: right;
+    float: right;
   }
 }
 
@@ -13,23 +13,23 @@
 
   // 回り込みの解除
   &::after {
-      content: "";
-      display: block;
-      clear: both;
+    content: "";
+    display: block;
+    clear: both;
   }
 }
 
 .box {
   width: 100px;
   height: 100px;
-  background-color: #ffa500; // 16進数に変更
+  background-color: #ffa500; //16進数に変更
   margin: 10px;
   text-align: center;
   line-height: 100px;
-  color: #faebd7; // 16進数に変更
+  color: #faebd7; //16進数に変更
 }
 
-// クラスで Mixin を展開
+//クラスでMixinを展開
 .is-float {
   @include float-style(true);
 }
